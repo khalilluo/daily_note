@@ -153,3 +153,116 @@ func main() {
 - defer 函数定义的顺序 与 实际执的行顺序是相反的，也就是最先声明的最后才执行
 - 当`os.Exit()`方法退出程序时，defer不会被执行
 - defer 只对当前协程有效。
+
+
+
+**`defer` 和函数绑定。** 两个理解，`defer` 只会和 `defer` 语句所在的特定函数绑定在一起，作用域也只在这个函数。从语法上来讲，`defer` 语句也一定要在函数内，否则会报告语法错误。
+
+```
+package main
+
+func main() {
+ func() {
+  defer println("--- defer ---")
+ }()
+ println("--- ending ---")
+}
+```
+
+如上，`defer` 处于一个匿名函数中，就 main 函数本身来讲，匿名函数 `fun(){}()` 先调用且返回，然后再调用 `println("--- ending ---")` ，所以程序输出自然是：
+
+```
+--- defer ---
+--- ending ---
+```
+
+## 异常场景
+
+这个是个非常重要的特性：`panic` 也能执行。Golang 不鼓励异常的编程模式，但是却也留了 `panic-recover` 这个异常和捕捉异常的机制。所以 `defer` 机制就显得尤为重要，甚至可以说是必不可少的。因为你没有一个无视异常，永保调用的 `defer` 机制，很有可能就会发生各种资源泄露，死锁等场景。为什么？因为发生了 `panic` 却不代表进程一定会挂掉，很有可能被外层 `recover` 住。
+
+```
+package main
+
+func main() {
+ defer func() {
+  if e := recover(); e != nil {
+   println("--- defer ---")
+  }
+ }()
+ panic("throw panic")
+}
+```
+
+如上，`main` 函数注册一个 defer ，且稍后主动触发 `panic`，`main` 函数退出之际就会调用 `defer` 注册的匿名函数。再提一点，这里其实有两个要点：
+
+1. `defer` 在 `panic` 异常场景也能确保调用；
+2. `recover` 必须和 `defer` 结合才有意义
+
+## 并发同步
+
+以下的例子对两个并发的协程做了下同步控制，常规操作。
+
+```
+var wg sync.WaitGroup
+
+for i := 0; i < 2; i++ {
+    wg.Add(1)
+    go func() {
+        defer wg.Done()
+        // 程序逻辑
+    }()
+}
+wg.Wait()
+```
+
+
+
+## 锁场景
+
+加锁解锁必须配套，在 Golang 有了 `defer` 之后，你就可以写了 `lock` 之后，立马就写 `unlock` ，这样就永远不会忘了。
+
+```
+ mu.RLock()
+ defer mu.RUnlock()
+```
+
+但是请注意，`lock` 以下的代码都会在锁内。所以下面的代码要足够精简和快速才行，如果说下面的逻辑很复杂，那么可能就需要手动控制 `unlock` 防止的位置了。
+
+
+
+## 资源释放
+
+某些资源是临时创建的，作用域只存在于现场函数中，用完之后需要销毁，这种场景也适用 `defer` 来释放。**释放就在创建的下一行**，这是个非常好的编程体验，这种编程方式能极大的避免资源泄漏。因为写了创建立马就可以写释放了，再也不会忘记了。
+
+```
+    // new 一个客户端 client；
+    cli, err := clientv3.New(clientv3.Config{Endpoints: endpoints})
+    if err != nil {
+        log.Fatal(err)
+    }
+    // 释放该 client ，也就是说该 client 的声明周期就只在该函数中；
+    defer cli.Close()
+```
+
+## panic-recover
+
+recover 必须和 defer 结合才行，使用姿势一般如下：
+
+```
+ defer func() {
+  if v := recover(); v != nil {
+   _ = fmt.Errorf("PANIC=%v", v)
+  }
+ }()
+```
+
+
+
+总结
+
+
+
+1. `defer` 其实并不是 Golang 独创，是多种高级语言的共同选择；
+2. `defer` 最重要的一个特点就是无视异常可执行，这个是 Golang 在提供了 `panic-recover` 机制之后必须做的补偿机制；
+3. `defer` 的作用域存在于函数，`defer` 也只有和函数结合才有意义；
+4. `defer` 允许你把配套的两个行为代码放在最近相邻的两行，比如创建&释放、加锁&放锁、前置&后置，使得代码更易读，编程体验优秀；
