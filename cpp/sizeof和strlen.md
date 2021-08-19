@@ -240,3 +240,4 @@ str8[4] = '\0';
 char str[] = "hello";
 char *str2 = "hello";//存储在数据区，只读
 ```
+
