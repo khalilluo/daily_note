@@ -1,0 +1,1 @@
+dynamic_cast是使用typeid获取对象真正类型来转换，基类需包含虚函数

@@ -1,0 +1,1 @@
+QRunnable可以继承QObject发送信号，但无线程事件循环。需要事件循环可以手动添加QEventLoop
