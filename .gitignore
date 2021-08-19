@@ -1,4 +1,5 @@
 
+*.exe
 venv
 .idea
 __pycache__
