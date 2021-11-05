@@ -71,7 +71,7 @@ var arr_2 [6] int = arr  // 报错
 Slice 可以组成多维数据结构。内部的 slice 长度可以不同，这和多位数组不同。
 
 ```go
-	// 数组
+	// 数组-
 	var twoD [2][3]int
     for i := 0; i < 2; i++ {
         for j := 0; j < 3; j++ {
