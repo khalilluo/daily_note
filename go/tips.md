@@ -50,7 +50,7 @@ func main() {
 
 ## 下面这段代码能否通过编译，不能的话原因是什么；如果能，输出什么？
 
-```
+```go
 func main() {
     list := new([]int)
     list = append(list, 1)

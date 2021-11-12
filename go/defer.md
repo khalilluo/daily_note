@@ -79,7 +79,7 @@ main
 
 
 
- 
+ 先defer再退栈，下面的返回值具名？
 
 ```go
 // 返回值具名，退栈时返回值加1，返回2
@@ -158,7 +158,7 @@ func main() {
 
 **`defer` 和函数绑定。** 两个理解，`defer` 只会和 `defer` 语句所在的特定函数绑定在一起，作用域也只在这个函数。从语法上来讲，`defer` 语句也一定要在函数内，否则会报告语法错误。
 
-```
+```go
 package main
 
 func main() {
@@ -180,7 +180,7 @@ func main() {
 
 这个是个非常重要的特性：`panic` 也能执行。Golang 不鼓励异常的编程模式，但是却也留了 `panic-recover` 这个异常和捕捉异常的机制。所以 `defer` 机制就显得尤为重要，甚至可以说是必不可少的。因为你没有一个无视异常，永保调用的 `defer` 机制，很有可能就会发生各种资源泄露，死锁等场景。为什么？因为发生了 `panic` 却不代表进程一定会挂掉，很有可能被外层 `recover` 住。
 
-```
+```go
 package main
 
 func main() {
@@ -202,7 +202,7 @@ func main() {
 
 以下的例子对两个并发的协程做了下同步控制，常规操作。
 
-```
+```go
 var wg sync.WaitGroup
 
 for i := 0; i < 2; i++ {
@@ -221,7 +221,7 @@ wg.Wait()
 
 加锁解锁必须配套，在 Golang 有了 `defer` 之后，你就可以写了 `lock` 之后，立马就写 `unlock` ，这样就永远不会忘了。
 
-```
+```go
  mu.RLock()
  defer mu.RUnlock()
 ```
@@ -234,7 +234,7 @@ wg.Wait()
 
 某些资源是临时创建的，作用域只存在于现场函数中，用完之后需要销毁，这种场景也适用 `defer` 来释放。**释放就在创建的下一行**，这是个非常好的编程体验，这种编程方式能极大的避免资源泄漏。因为写了创建立马就可以写释放了，再也不会忘记了。
 
-```
+```go
     // new 一个客户端 client；
     cli, err := clientv3.New(clientv3.Config{Endpoints: endpoints})
     if err != nil {
@@ -248,7 +248,7 @@ wg.Wait()
 
 recover 必须和 defer 结合才行，使用姿势一般如下：
 
-```
+```go
  defer func() {
   if v := recover(); v != nil {
    _ = fmt.Errorf("PANIC=%v", v)

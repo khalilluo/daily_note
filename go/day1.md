@@ -180,7 +180,10 @@ range
 结构体
 
 ```go
-	type person struct {    name string    age  int }
+	type person struct {    
+        name string    
+        age  int 
+    }
 	
 	// 使用这个语法创建了一个新的结构体元素。
     fmt.Println(person{"Bob", 20}) 

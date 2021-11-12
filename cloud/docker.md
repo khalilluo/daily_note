@@ -25,3 +25,4 @@ $ docker run -d  --name redisHostPort -p 6379:6379 redis:latest
 ```
 
 docker exec -it kris-redis redis-cli
+

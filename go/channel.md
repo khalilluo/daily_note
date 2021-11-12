@@ -16,7 +16,7 @@
 
 ## 声明 chan
 
-```
+```go
 // 声明不带缓冲的通道
 ch1 := make(chan string)
 
