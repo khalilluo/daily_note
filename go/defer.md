@@ -79,7 +79,9 @@ main
 
 
 
- 先defer再退栈，下面的返回值具名？
+ 先defer再退栈，
+
+函数返回之前（或任意位置执行 `return` 语句之后）执行
 
 ```go
 // 返回值具名，退栈时返回值加1，返回2
@@ -256,7 +258,27 @@ recover 必须和 defer 结合才行，使用姿势一般如下：
  }()
 ```
 
+## 定义追踪
 
+```go
+func trace(s string) string {
+	fmt.Println("entering:", s)
+	return s
+}
+
+func un(s string) {
+	fmt.Println("leaving:", s)
+}
+
+func b() {
+	defer un(trace("b"))
+	fmt.Println("in b")
+}
+
+func main() {
+	b()
+}
+```
 
 总结
 

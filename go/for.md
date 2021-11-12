@@ -10,6 +10,7 @@ import "fmt"
 func main() {
 	var i int = 5
 
+    // 即其他语言的while
 	for i >= 0 {
 		i = i - 1
 		fmt.Printf("The variable i is now: %d\n", i)
