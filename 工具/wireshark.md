@@ -2,6 +2,8 @@
 
 在捕获前的规则OPTION中设置过滤规则，比如host 120.24.90.201 或者 ip.addr == 120.24.90.201 
 
+Linux下抓取的前置规则选any
+
 
 
 常用
@@ -16,7 +18,7 @@ tcp.port == 8888
 
 rtp.p_type == 96   // h264的payloadtype
 
-
+tcp.srcport = 1937
 
 ### 数据对应
 

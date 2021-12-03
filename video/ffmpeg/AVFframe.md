@@ -2,7 +2,7 @@
 
 ```c++
 		while (avcodec_receive_frame(pCodecCtx, &g_frame) == 0)
-		{
+		 
 			uint32_t pitchY = g_frame.linesize[0];
 			uint32_t pitchU = g_frame.linesize[1];
 			uint32_t pitchV = g_frame.linesize[2];
@@ -29,3 +29,4 @@
 			}
 		}
 ```
+

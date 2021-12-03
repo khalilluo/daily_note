@@ -6,3 +6,6 @@
 
 当一个变量被声明之后，系统自动赋予它该类型的零值：int 为 0，float 为 0.0，bool 为 false，string 为空字符串，指针为 nil。记住，所有的内存在 Go 中都是经过初始化的
 
+nil只能赋值给指针、chan、func、interface、map、或slice类型的变量。
+
+## 

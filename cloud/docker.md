@@ -1,4 +1,4 @@
-### docker中run和start的区别
+docker中run和start的区别
 
 docker run 后面指定的是一个镜像
 
@@ -26,3 +26,12 @@ $ docker run -d  --name redisHostPort -p 6379:6379 redis:latest
 
 docker exec -it kris-redis redis-cli
 
+
+
+#### 导出
+
+docker save redis>/home/panocom/redis.tar
+
+#### 导入
+
+docker load < redis.tar
