@@ -9,10 +9,13 @@
     })
 ```
 
-除了`:`，gin还提供了`*`号处理参数，`*`号能匹配的规则就更多
+除了`:`，gin还提供了`*`号处理参数，`*`号能匹配的规则就更多。*可以匹配多个，但只能放到最后
 
 ```css
-    router.GET("/user/:name/*action", func(c *gin.Context) {
+    
+    // 此 handler 将匹配 /user/john/ 和 /user/john/send
+    // 如果没有其他路由匹配 /user/john，它将重定向到 /user/john/
+	router.GET("/user/:name/*action", func(c *gin.Context) {
         name := c.Param("name")
         action := c.Param("action")
         message := name + " is " + action

@@ -8,19 +8,19 @@
 所谓时间基表示的就是每个刻度是多少秒 
 pts的值就是占多少个时间刻度（占多少个格子）。它的单位不是秒，而是时间刻度。只有pts加上time_base两者同时在一起，才能表达出时间是多少
 
-在ffmpeg中。av_q2d(time_base)=每个刻度是多少秒 ，此时你应该不难理解 pts*av_q2d(time_base)才是帧的显示时间戳
+在ffmpeg中。av_q2d(time_base)=每个刻度是多少秒 ，此时你应该不难理解 **pts*av_q2d(time_base)才是帧的显示时间戳**
 
 
 
 ## why
 
 下面理解时间基的转换，为什么要有时间基转换。 
-首先，不同的封装格式，timebase是不一样的。另外，整个转码过程，不同的数据状态对应的时间基也不一致。拿mpegts封装格式25fps来说（只说视频，音频大致一样，但也略有不同）。非压缩时候的数据（即YUV或者其它），在ffmpeg中对应的结构体为AVFrame,它的时间基为AVCodecContext 的time_base ,AVRational{1,25}。 
-压缩后的数据（对应的结构体为AVPacket）对应的时间基为AVStream的time_base，AVRational{1,90000}。 
+首先，不同的封装格式，timebase是不一样的。另外，整个转码过程，不同的数据状态对应的时间基也不一致。拿mpegts封装格式25fps来说（只说视频，音频大致一样，但也略有不同）。**非压缩**时候的数据（即YUV或者其它），在ffmpeg中对应的结构体为AVFrame,它的时间基为AVCodecContext 的time_base ,AVRational{1,25}。 
+**压缩后**的数据（对应的结构体为AVPacket）对应的时间基为AVStream的time_base，AVRational{1,90000}。 
 因为数据状态不同，时间基不一样，所以我们必须转换，在1/25时间刻度下占10格，在1/90000下是占多少格。这就是pts的转换。
 
 根据pts来计算一桢在整个视频中的时间位置： 
-timestamp(秒) = pts * av_q2d(st->time_base)
+timestamp(秒) = pts * av_q2d(stream->time_base)
 
 duration和pts单位一样，duration表示当前帧的持续时间占多少格。或者理解是两帧的间隔时间是占多少格。一定要理解单位。 
 pts：格子数 
@@ -51,4 +51,5 @@ pts=n*duration=n*nb_samples
 
 ### 流媒体相关
 
-RTSP中没有dts和pts？
+RTSP中没有dts和pts？有的，如果保存的话需要根据差值重新变化pts和dts，否则播放可能异常（从获取流到开始保存那一帧的时间将被计算进去）
+

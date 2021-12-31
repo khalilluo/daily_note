@@ -2,6 +2,8 @@ AVPacket表示解复用之后，解码之前的数据。对于视频（Video）�
 
 推荐在栈上分配？
 
+**结构体成员**
+
 ```C++
 // 压缩编码的数据。
 // 例如对于H.264来说。1个AVPacket的data通常对应一个NAL。
@@ -128,7 +130,7 @@ AVPacket的创建有很多种，而由于Packet中的数据是通过data引用�
 如果是音频流则将读到Packet调用`packet_queue_put`插入到队列，如果不是音频流则调用`av_packet_unref`释放已读取到的AVPacket数据。
 下面代码是`packet_queue_put`中将Packet放入到一个新建的队列节点的代码片段
 
-```
+```c
     AVPacketList *pktl;
     //if (av_dup_packet(pkt) < 0)
         //return -1;

@@ -12,7 +12,7 @@
 
 
 
-![img](https://vp0226wv9f.feishu.cn/space/api/box/stream/download/asynccode/?code=YWZhOTkxZGQ3NjZmOWExNzYwY2Q5OWIxMmY0YjgwNDVfUzVqQ0FyVk9MNFMzV2k4RGlJZ0Q0dERjZVJQOW9YMmpfVG9rZW46Ym94Y24wMXp2cFFrUzJ2NGp1a0tDeXoxejZiXzE2MzYxMDI2NjM6MTYzNjEwNjI2M19WNA)
+![img](image/fc837c2e-f852-4c4a-882f-1233242a5d9b.png)
 
 伪代码
 

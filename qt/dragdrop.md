@@ -12,3 +12,12 @@
 - eventFilter里面出现两次drop的事件可能是因为没有讲drop事件处理（return true）导致
 - 如果表格直接acceptDrop接收其他表格的拖动的话会出现表格内容的拖动复制
 
+
+
+
+
+## QML
+
+- 指定drag.target为锚定的元素，可以让drag的对象不移动
+- 不设置keys默认有droparea就可以拖入
+

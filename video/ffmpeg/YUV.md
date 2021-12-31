@@ -2,7 +2,7 @@
 空间占用少。 
 RGB24一帧的大小size＝width×heigth×3 Byte 
 RGB32一帧的大小size＝width×heigth×4 Byte 
-YUV420一帧的大小size=width×heigth×1.5 Byte (Y占1Byte，UV占0.5Byte)
+YUV420一帧的大小size=width×heigth×1.5 Byte (Y占1Byte，UV共占0.5Byte)
 
 
 

@@ -24,7 +24,7 @@ docker run是利用镜像生成容器，并启动容器，而docker start是启�
 $ docker run -d  --name redisHostPort -p 6379:6379 redis:latest
 ```
 
-docker exec -it kris-redis redis-cli
+docker exec -it kris-redis redis-cli // 后面是指定运行Redis的指令
 
 
 

@@ -1,4 +1,4 @@
-  enable_shared_from_this是一个模板类，定义于头文件<memory>，其原型为：
+ enable_shared_from_this是一个模板类，定义于头文件<memory>，其原型为：
 
 template< class T > class enable_shared_from_this;
        std::enable_shared_from_this 能让一个对象（假设其名为 t ，且已被一个 std::shared_ptr 对象 pt 管理）安全地生成其他额外的 std::shared_ptr 实例（假设名为 pt1, pt2, ... ） ，它们与 pt 共享对象 t 的所有权。

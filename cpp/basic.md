@@ -1,10 +1,10 @@
 全局变量早于main函数被初始化，在main函数后被调用析构函数。
-析构函数不能被重载
+
 
 单个参数的构造函数定义了从形参到该类型的一个隐式类型转换
 CSample(int iNum)	// 构造函数
 CSample s1(10);
-s1 = 20;		// 则先调用单参构造函数，实参为20创建一个临时对象。再调用copy-assignment赋值给s1
+**s1 = 20;		// 则先调用单参构造函数，实参为20创建一个临时对象。再调用copy-assignment赋值给s1**
 
 CSample s2 = 100;	// 这里是初始化不是赋值
 
@@ -19,11 +19,9 @@ sizeof(数组名)则为整个数组在内存的大小，即元素大小*个数
 友元不能传递，继承且是单向的
 
 static成员不是类对象的一部分，不能在构造函数中初始化，应该在类定义外部初始化。
-static成员变量可以通过域::或者对象访问
-非静态成员函数可以访问静态成员函数
-static成员函数不能声明为const和virtual
+**static成员函数不能声明为const和virtual** 注意是成员函数而已
 
-使用static变量的函数一般是不可重入的，也不是线程安全的
+**使用static变量的函数一般是不可重入的，也不是线程安全的**
 不建议在头文件中定义static
 static在函数或者全局只对当前文件下可见？
 对函数而言，static的作用仅限于隐藏。对变量而言，因为保持在bss区域，如果不初始化则为默认值。且可以保持局部变量的值
@@ -46,7 +44,7 @@ public继承->接口继承、、、、private和protect继承->实现继承。因为只有public是把基
 
 base指针可以强制转换为derived指针，static_cast和dynamic_cast，不安全。而base对象则不能转换为derived对象
 
-
+```c++
 template<typename T> class CMakeFinal
 {
 	friend T;
@@ -61,8 +59,29 @@ public:
 	CFinalClass(){}
 	~CFinalClass(){}
 };
+```
 
 则CFinalClass是不可继承的，注意是虚继承。
 
-
 友元关系不能被继承
+
+
+
+```cpp
+int *pia = new int[10]; // 10个未初始化int
+int *pia2 = new int[10](); // 10个值初始化为0的int
+
+unsigned char *p1; 
+unsigned long *p2; 
+p1=(unsigned char *)0x801000; 
+p2=(unsigned long *)0x810000; 
+
+/*
+解析：p1指向字符型，一次移动一个字符型，1个字节；p1+5后移5个字节，16进制表示为5；
+
+     p2指向长整型，一次移动一个长整型，4个字节，p2+5后移20字节，16进制表示为14。
+
+ #char每次移动1个字节；short移动2个字节 ；int , long ,float移动4个字节 ；double移动8个字节
+ */
+```
+
