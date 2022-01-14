@@ -1,4 +1,5 @@
-<<<<<<< .mine
+
+
 ```CPP
 #include <stdio.h>
 #include <string.h>
@@ -242,7 +243,7 @@ char str[] = "hello";
 char *str2 = "hello";//存储在数据区，只读
 ```
 
-=======
+
 ```CPP
 #include <stdio.h>
 #include <string.h>
@@ -485,5 +486,3 @@ str8[4] = '\0';
 char str[] = "hello";
 char *str2 = "hello";//存储在数据区，只读
 ```
-
->>>>>>> .theirs

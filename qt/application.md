@@ -14,6 +14,4 @@ QApplication定义在widgets模块中，是QWidget相关的，能设置双击间
 
 如果你的应用程序是无界面的，直接使用QCoreApplication即可，如果是gui相关，但没有使用widgets模块的就使用QGuiApplication，否则使用QApplication。
 
-
-
 ChartView组件必须使用QApplication才能加载

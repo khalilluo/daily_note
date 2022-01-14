@@ -1,0 +1,3 @@
+如果需要对QTreeWidget等使用托管，注意paint函数中需要先调用父类paint后再自定义paint，否则QTreeWidget的行为将覆盖自定义的paint动作
+
+paint函数的参数QStyleOptionViewItem里面有当前元素的状态和信息等，比如State_Children、State_Open、State_Selected等

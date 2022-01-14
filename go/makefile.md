@@ -4,11 +4,7 @@
 
 我们常常会在开源项目中发现 Makefile，你是否有过疑问？
 
-本章节会简单介绍 Makefile 的使用方式，最后建议深入学习
-
 ## 怎么解决
-
-对于构建编排，Docker 有 Dockerfile ，在 Unix 中有神器 [Make](https://en.wikipedia.org/wiki/Make_(software)) ….
 
 ## Make
 

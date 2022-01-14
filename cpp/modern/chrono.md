@@ -163,7 +163,6 @@ std::chrono::time_point 表示一个具体时间，如上个世纪80年代、你
 ```javascript
 template <class ToDuration, class Clock, class Duration>
 time_point<Clock,ToDuration> time_point_cast (const time_point<Clock,Duration>& tp);
-12
 ```
 
 比如计算
@@ -262,3 +261,4 @@ int main ()
 最后一个时钟，std::chrono::high_resolution_clock 顾名思义，这是系统可用的最高精度的时钟。实际上high_resolution_clock只不过是system_clock或者steady_clock的typedef。
 操作有：
 now() 获取当前时钟。
+

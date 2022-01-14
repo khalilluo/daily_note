@@ -9,3 +9,4 @@ go build -o libgoloader.so -buildmode=c-shared . 生成头文件和动态库CPP�
 
 
 可以在接口函数内调用goroutines
+

@@ -20,11 +20,18 @@ docker run是利用镜像生成容器，并启动容器，而docker start是启�
 
 因为redis默认占用6379端口，我们可以将端口6379映射到本地的6379
 
-```text
+```shell
 $ docker run -d  --name redisHostPort -p 6379:6379 redis:latest
+# -i: 交互式操作。
+# -t: 终端。
+# -d：后台运行
+
 ```
 
+```shell
 docker exec -it kris-redis redis-cli // 后面是指定运行Redis的指令
+sudo docker exec -it redis6380 /bin/bash // 
+```
 
 
 
