@@ -1,0 +1,5 @@
+
+
+着色器允许我们利用SceneGraph的接口直接调用在强大的GPU上运行的OpenGL来创建渲染效果。着色器使用ShaderEffect与ShaderEffectSource元素来实现
+
+执行时,会将着色器代码发送到GPU,并在GPU上编译执行。QML着色器元素(Shader QMLElements)允许你与OpenGL着色器程序的属性交互

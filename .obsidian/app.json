@@ -1,0 +1,16 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "defaultViewMode": "source",
+  "attachmentFolderPath": "dialy",
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "lineWrap": true,
+  "foldIndent": false,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "showIndentGuide": true,
+  "foldHeading": true,
+  "showFrontmatter": false,
+  "alwaysUpdateLinks": true
+}

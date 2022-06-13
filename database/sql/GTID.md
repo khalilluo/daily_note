@@ -1,0 +1,5 @@
+Gtid_executed：记录所有已经执行事务GTID，包括复制过来的
+
+Retrieved_Gtid_Set：从relay_log中读取到GTID，一级二级从数据库的ID应该是一致的，因为主虽然不是同一个但事务的ID是同一个
+
+通常executed=Retrieved是正常的，代表收到的binlog都完整执行
