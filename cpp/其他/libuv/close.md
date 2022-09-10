@@ -1,0 +1,1 @@
+我们知道对于一个handle，他的使用一般是init，start，stop。但是如果我们在stop一个handle之后，还有些事情需要处理怎么办？这时候就可以使用close阶段。close阶段可以用来关闭一个handle，并且执行一个回调。比如用于释放动态申请的内存。close阶段的任务由uv_close产生

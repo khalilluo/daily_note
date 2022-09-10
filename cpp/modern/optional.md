@@ -38,9 +38,9 @@ void main(){
 
 ### 比较大小
 
-对于定义了<，>，==操作符的类型，保存他们的optional对象也可以比较大小。如optional<int>之间比较大小和直接比较int数值的大小是一样的。比较特殊的是std::nullopt，在比较大小时，它总小于存储有效值的optional对象。
+对于定义了<，>，== 操作符的类型，保存他们的optional对象也可以比较大小。如optional<int>之间比较大小和直接比较int数值的大小是一样的。比较特殊的是std::nullopt，在比较大小时，它总小于存储有效值的optional对象。
 
-```cpp
+``` cpp
 std::optional<int> int1(1);
 std::optional<int> int2(10);
 std::optional<int> int3;

@@ -1,6 +1,7 @@
 
 
 ### 比较
+QQuickView继承QQuickWindow，是基于Graphical scene的窗口。engine是引擎，需要自己创建窗口，所以需要Window窗口控件
 
 QQuickView
 - 需要搭配QGuiApplication启动

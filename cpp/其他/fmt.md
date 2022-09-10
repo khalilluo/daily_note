@@ -27,6 +27,11 @@ fmt::print("{}\n", v);
 // 输出到文件
 auto out = fmt::output_file("guide.txt");
 out.print("Don't {}", "Panic");
+
+// 输出16进制数据
+  std::string s = fmt::format("The answer is  {:X}.", 32);
+
+  fmt::print("{}", s);
 ```
 
   
