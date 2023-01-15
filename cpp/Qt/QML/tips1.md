@@ -133,7 +133,7 @@
 ### 高亮
 
 - 视图高亮默认跟随currentItem，需要手动设置currentItem，使用Focus可以使用键盘控制
-- 如果要详细控制高亮通常将highlightFollowCurrentItem设置为false，高亮的xy跟随ListView.view.currentItem的xy
+- 如果要详细控制高亮通常将highlightFollowCurrentItem设置为false，高亮的xy跟随ListView.view.currentItem的xy; 或者默认highlightFollowCurrentItem为true, 手动设置currentIndex
 
 
 

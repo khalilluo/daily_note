@@ -1,2 +1,6 @@
-qtcreator有时调试qml时出现断点不成功，提示需要打开调试功能，此时可以在项目栏更改debug选项改为
+qtcreator有时调试qml时出现断点不成功，提示需要打开调试功能，此时可以在项目栏更改debug选项改为enable
+
+vs调试失败或者qtcreator打开后提示crashed，有时可能是插件或者库未加载
+
+ItemSelectionModel用于选择View中的元素
 

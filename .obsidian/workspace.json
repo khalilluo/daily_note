@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "9204b4ba1d4c88cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "5325bac28e70961e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15ef760c73e324bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cpp/并发/惊群.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f0244475aefa2dd2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cpp/cmake/find_package.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "38d4fa76b60b463e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "daily/2023-W01.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b93af4fe33387187",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "linux/编译.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "74088951dede3bbd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "web/javascript/js-tips.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8016db6ab731e893",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "网络/模型.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "97d07df7c56950bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "3bcce1cec0e0b44e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52aea4613065a18a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ad2bc6d3340a6b58",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "default",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 289
+  },
+  "right": {
+    "id": "b5b10c0b61195134",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f83e40f97161528",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b75e5ef8026f41b7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "cpp/并发/惊群.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3a276d2a213772e6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "cpp/并发/惊群.md"
+              }
+            }
+          },
+          {
+            "id": "19284005389a8a22",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "312d9ed30af9b807",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 303
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "workbench-obsidian:Workbench": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "random-note:Open random note": false
+    }
+  },
+  "active": "15ef760c73e324bf",
+  "lastOpenFiles": [
+    "cpp/POD.md",
+    "designPattern/设计原则/开闭原则.md",
+    "go/超时处理，非阻塞调用.md",
+    "daily/2022-1.md",
+    "cpp/tips/平凡析构类型.md",
+    "cpp/modern/结构化绑定类型推导.md",
+    "cpp/tips/宏定义污染.md",
+    "system/大小端.md",
+    "cpp/template/变长参数模板.md",
+    "daily/2022-W41.md"
+  ]
+}

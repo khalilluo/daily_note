@@ -37,16 +37,3 @@ flush privileges;
 
 
 
-
-
-关于mysqld和my_print_defaults读取my.cnf顺序
-实际上这个函数init_default_directories函数中
-其中顺序为：
-
-- /etc/my.cnf
-- /etc/mysql/my.cnf
-- DEFAULT_SYSCONFDIR 编译时配置下的my.cnf
-- MYSQL_HOME 设置。mysqld_safe会设置MYSQL_HOME，就会读取下面的my.cnf。
-- --defaults-extra-file的设置，my_print_defaults和mysqld均由这个设置。
-- ~/.my.cnf
-- 从解析的顺序来看最后会加载命令行参数。

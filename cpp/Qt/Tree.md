@@ -2,7 +2,7 @@
 --- 
 ### QSortFilterProxyModel
 搜索：
-- setFilterKeyColumn：设置过滤列，如果同时设置两行需要同时满足
+- setFilterKeyColumn：设置过滤列，如果同时设置两行需要同时满足。-1则读取所有的列
 - setFilterRegExp：设置过滤器，可以是字符串和QRegExp
 - setFilterRole：设置过滤的role，需要自己在data里面返回正确的数据
 - setRecursiveFilteringEnabled：子项满足时祖先节点也可见
@@ -10,3 +10,7 @@
 
 排序：
 - lessthan：需要重载，如果重写了lessThan(),那么就不会再调用model的sort方法了
+
+
+### ListModel中使用
+无法通过data获取数据，因为role无法确定，而且sourceModel的columnCount不能返回正确的列数

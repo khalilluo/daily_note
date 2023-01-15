@@ -67,7 +67,7 @@ d、提取指定position位置的binlog日志导入数据库
 # mysqlbinlog --start-position="120" --stop-position="332" /opt/data/APP01bin.000001 | mysql -uroot -p  
   
 e、提取指定开始时间的binlog并输出到日志文件  
-# mysqlbinlog --start-datetime="2014-12-15 20:15:23" /opt/data/APP01bin.000002 --result-file=extra02.sql  
+# mysqlbinlog --start-datetime="2022-09-16 00:00:00" /opt/data/APP01bin.000002 --result-file=extra02.sql  
   
 f、提取指定位置的多个binlog日志文件  
 # mysqlbinlog --start-position="120" --stop-position="332" /opt/data/APP01bin.000001 /opt/data/APP01bin.000002|more  
@@ -85,5 +85,6 @@ i、远程提取使用row格式的binlog日志并输出到本地文件
 
 使用grep -i -B -A 再次过滤 
 ``` shell
+# grep -A1 -B3表示匹配行的前1行和后3行
 mysqlbinlog -vv --base64-output=decode-rows --skip-gtids=true --database=dualmode | grep -A1 -B3 -i -E '^insert|^update|^delete|^replace|^alter' | grep -A1 -B3 mytable > log.log
 ```
