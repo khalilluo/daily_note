@@ -54,3 +54,37 @@ start:
 	docker run -it --rm $(NAME):$(VERSION) /bin/bash
 
 ```
+
+
+#### 删除指定镜像
+
+``` makefile
+DOCKER_IMAGE_NAME = your-docker-image-name
+
+.PHONY: clean
+
+clean:
+    @if docker images $(DOCKER_IMAGE_NAME) | awk '{print $$2}' | grep -q -F $(DOCKER_IMAGE_TAG); then \
+        docker rmi $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG); \
+        echo "Docker image $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) deleted"; \
+    else \
+        echo "Docker image $(DOCKER_IMAGE_NAME):$(DOCKER_IMAGE_TAG) not found"; \
+    fi
+
+```
+
+#### 删除指定镜像版本
+``` makefile
+
+IMAGE_NAME = keepalived
+IMAGE_VERSION = 0728
+
+.PHONY: check-and-remove-image
+
+check-and-remove-image:
+	@if [ "$(shell docker images -q $(IMAGE_NAME):$(IMAGE_VERSION) 2> /dev/null)" != "" ]; then \
+		docker rmi -f $(IMAGE_NAME):$(IMAGE_VERSION); \
+	fi
+
+
+```

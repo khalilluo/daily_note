@@ -7,7 +7,7 @@ var tmp = null
 var foo = tmp ?? "default string"
 console.log(foo) // 输出：default string
 
-tmp = "hello"
+tmp = "hello
 foo = tmp ?? "default string"
 console.log(foo) // 输出：hello
 ```

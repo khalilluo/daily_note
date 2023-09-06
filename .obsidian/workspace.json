@@ -8,78 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "15ef760c73e324bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cpp/并发/惊群.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "f0244475aefa2dd2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cpp/cmake/find_package.md",
+                "file": "cpp/多态.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "38d4fa76b60b463e",
+            "id": "2743235337b9cbbe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-W01.md",
+                "file": "cpp/Qt/拖拽.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b93af4fe33387187",
+            "id": "8e3457f95615098c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/编译.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "74088951dede3bbd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "web/javascript/js-tips.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8016db6ab731e893",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "网络/模型.md",
+                "file": "cpp/cmake/release和debug.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -108,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "default",
+                "query": "Drop",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,8 +81,17 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "0738ae1668c2348d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -137,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cpp/并发/惊群.md",
+                "file": "cpp/Qt/拖拽.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cpp/并发/惊群.md"
+                "file": "cpp/Qt/拖拽.md"
               }
             }
           },
@@ -179,7 +153,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 303
+    "width": 303,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,17 +170,40 @@
       "random-note:Open random note": false
     }
   },
-  "active": "15ef760c73e324bf",
+  "active": "2743235337b9cbbe",
   "lastOpenFiles": [
-    "cpp/POD.md",
-    "designPattern/设计原则/开闭原则.md",
-    "go/超时处理，非阻塞调用.md",
+    "cpp/Qt/QML/XMLHttpRequest.md",
+    "cpp/Qt/QML/ScrollView.md",
+    "flutter/dart/函数.md",
+    "daily/2022-W21.md",
     "daily/2022-1.md",
-    "cpp/tips/平凡析构类型.md",
-    "cpp/modern/结构化绑定类型推导.md",
-    "cpp/tips/宏定义污染.md",
-    "system/大小端.md",
-    "cpp/template/变长参数模板.md",
-    "daily/2022-W41.md"
+    "database/sql/mysql/视图.md",
+    "database/sql/语句/内外连接主外键.md",
+    "网络/局域网搭建dns.md",
+    "cpp/基础/priority_queue.md",
+    "cpp/container/去重.md",
+    "cpp/container/basic.md",
+    "cpp/container/遍历删除.md",
+    "cpp/并发/async.md",
+    "cpp/并发/condition_variable.md",
+    "cpp/并发/enable_shared_from_this.md",
+    "cpp/并发/packaged_task.md",
+    "cpp/并发/promise.md",
+    "cpp/并发/thread_local static.md",
+    "cpp/并发/惊群.md",
+    "cpp/algorithms/std生成和异变算法.md",
+    "cpp/Qt/QML/model访问方式.md",
+    "cpp/Qt/QML/StackView.md",
+    "cpp/Qt/QML/动态QML.md",
+    "database/sql/mysql/canal.md",
+    "cloud/git/分支.md",
+    "cpp/cmake/库链接.md",
+    "a1.canvas",
+    "dialy",
+    "web/vue/element",
+    "web/css",
+    "web/vue",
+    "algorithms/排序",
+    "linux/vim"
   ]
 }

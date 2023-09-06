@@ -88,3 +88,33 @@ add(1, 2);
 add(1.1, 2.2);
 ```
 
+
+匿名函数本质就是一个匿名类，如果捕获变量的话则匿名类中包含捕获的数据作为成员变量
+``` c++
+auto f = []{};
+
+  // 经过编译，
+  class __lambda_5_14
+  {
+    public: 
+    inline /*constexpr */ void operator()() const
+    {
+    }
+    
+    using retType_5_14 = auto (*)() -> void;
+    inline constexpr operator retType_5_14 () const noexcept
+    {
+      return __invoke;
+    };
+    
+    private: 
+    static inline /*constexpr */ void __invoke()
+    {
+      __lambda_5_14{}.operator()();
+    }
+    
+    
+  };
+  
+  __lambda_5_14 f = __lambda_5_14{};
+```

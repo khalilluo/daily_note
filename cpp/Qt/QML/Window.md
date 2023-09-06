@@ -17,7 +17,7 @@ QQmlApplicationEngine
 ##### Window自定义标题栏并全屏（自定义最大最小关闭按钮）
 1. 将modality设置为ApplicationModal，这样最小化时window的active状态为false
 2. Qt.FramelessWindowHint（无边框） | Qt.Window（增加任务栏标签）
-3. showFullScreen全屏，showNormal
+3. showFullScreen全屏，showNorma
 
 
 ##### Rectangle自定义标题栏并全屏（自定义最大最小关闭按钮）

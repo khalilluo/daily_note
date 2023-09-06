@@ -1,4 +1,5 @@
 
+
 docker中run和start的区别
 
 docker run 后面指定的是一个镜像
@@ -26,7 +27,7 @@ $ docker run -d  --name redisHostPort -p 6379:6379 redis:latest
 # -i: 交互式操作。
 # -t: 终端。
 # -d：后台运行
-# -p: hostPort:containerPort
+# -p: hostPort:co  ntainerPort
 # -P: 将容器暴露的所有端口，都随机映射到宿主机上
 
 ```
